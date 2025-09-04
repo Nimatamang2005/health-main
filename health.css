@@ -128,10 +128,10 @@ a {
   padding: 20px 60px;
 }
 .Introduction h2{
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 .Introduction p{
-  font-size: 1.2rem
+  font-size: 16px
 }
 
 /* Sections */
@@ -226,7 +226,7 @@ a {
     .contact-container h1 {
       text-align: center;
       margin-bottom: 1rem;
-      color: #0369a1;
+      color: #003366;
     }
 
     label {
@@ -250,7 +250,7 @@ a {
     }
 
     .send {
-      background: #0369a1;
+      background: #006d77;
       color: #fff;
       border: none;
       padding: 0.8rem;
