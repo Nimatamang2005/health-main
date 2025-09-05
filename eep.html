@@ -1,0 +1,20 @@
+<section id="home">
+  <h1>Welcome to Home</h1>
+  <button onclick="toggleServices()">See More</button>
+
+  <div id="servicesInfo" style="display:none; margin-top:20px;">
+    <h2>Our Services</h2>
+    <p>Here is the services information...</p>
+  </div>
+</section>
+
+<script>
+  function toggleServices() {
+    var x = document.getElementById("servicesInfo");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+</script>

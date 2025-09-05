@@ -3,78 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Features Section</title>
+  <title>Health ID Dashboard</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #2c3e50;
+      color: white;
+      padding: 15px 20px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      min-height: 100vh;
     }
 
-    .container {
-      max-width: 800px;
-      background: #fff;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .feature {
-      margin-bottom: 20px;
-    }
-
-    .feature h3 {
-      font-size: 1.2rem;
-      color: #333;
+    .navbar h1 {
       margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-size: 20px;
     }
 
-    .feature .emoji {
-      font-size: 1.4rem;
+    .navbar button {
+      background: #1abc9c;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    .feature p {
-      margin: 5px 0 0;
-      font-size: 0.95rem;
-      color: #555;
-      line-height: 1.5;
+    .navbar button:hover {
+      background: #16a085;
+    }
+
+    /* Side Panel */
+    .side-panel {
+      position: fixed;
+      margin-top: 0.5px;
+      right: -450px; /* Hidden by default */
+      width: 350px;
+      height: 100%;
+      background: linear-gradient(to right, #83c5be, #edf6f9);
+      box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+      transition: right 0.4s ease;
+      padding: 20px;
+    }
+
+    .side-panel.open {
+      right: 0; /* Slide in */
+    }
+
+    .side-panel h2 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+
+    .profile-info {
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+
+    .close-btn {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      float: right;
+    }
+
+    .close-btn:hover {
+      background: #c0392b;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="feature">
-      <h3><span class="emoji">🔓</span> Seamless Access</h3>
-      <p>Health records can be accessed anytime, anywhere – across hospitals, clinics, and states – without paperwork or duplication.</p>
-    </div>
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>Kerala Digital Healthcare</h1>
+    <button id="dashboardBtn">Health ID Dashboard</button>
+  </div>
 
-    <div class="feature">
-      <h3><span class="emoji">🔒</span> Security & Privacy</h3>
-      <p>Data is encrypted, stored safely, and shared only with user consent, aligning with national standards like ABDM (Ayushman Bharat Digital Mission).</p>
-    </div>
-
-    <div class="feature">
-      <h3><span class="emoji">🚶‍♂</span> Migrant-Friendly Healthcare</h3>
-      <p>Especially built to support interstate migrant workers and travelers who often struggle with fragmented medical histories.</p>
-    </div>
-
-    <div class="feature">
-      <h3><span class="emoji">🤖</span> Smart Healthcare Ecosystem</h3>
-      <p>Integrated with AI-driven insights, vaccination certificates, prescriptions, diagnostic reports, and emergency details.</p>
-    </div>
-
-    <div class="feature">
-      <h3><span class="emoji">📈</span> Scalability & Interoperability</h3>
-      <p>Compliant with FHIR/HL7 standards, making it compatible with national and global healthcare systems.</p>
+  <!-- Side Panel -->
+  <div class="side-panel" id="sidePanel">
+    <button class="close-btn" id="closeBtn">X</button>
+    <h2>My Health ID</h2>
+    <div class="profile-info">
+      <p><strong>ID:</strong> H123456789</p>
+      <p><strong>Name:</strong> Nima Dolma Tamang</p>
+      <p><strong>Age:</strong> 28</p>
+      <p><strong>Blood Group:</strong> O+</p>
+      <p><strong>Contact:</strong> +91 9876543210</p>
     </div>
   </div>
+
+  <script>
+    const dashboardBtn = document.getElementById('dashboardBtn');
+    const sidePanel = document.getElementById('sidePanel');
+    const closeBtn = document.getElementById('closeBtn');
+
+    dashboardBtn.addEventListener('click', () => {
+      sidePanel.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidePanel.classList.remove('open');
+    });
+  </script>
 </body>
 </html>
